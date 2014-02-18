@@ -4,6 +4,34 @@ package routes
 import "github.com/robfig/revel"
 
 
+type tApp struct {}
+var App tApp
+
+
+func (_ tApp) Index(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("App.Index", args).Url
+}
+
+func (_ tApp) Hello(
+		myName string,
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "myName", myName)
+	return revel.MainRouter.Reverse("App.Hello", args).Url
+}
+
+func (_ tApp) List(
+		) string {
+	args := make(map[string]string)
+	
+	return revel.MainRouter.Reverse("App.List", args).Url
+}
+
+
 type tGorpController struct {}
 var GorpController tGorpController
 
@@ -27,18 +55,6 @@ func (_ tGorpController) Rollback(
 	args := make(map[string]string)
 	
 	return revel.MainRouter.Reverse("GorpController.Rollback", args).Url
-}
-
-
-type tApp struct {}
-var App tApp
-
-
-func (_ tApp) Index(
-		) string {
-	args := make(map[string]string)
-	
-	return revel.MainRouter.Reverse("App.Index", args).Url
 }
 
 
