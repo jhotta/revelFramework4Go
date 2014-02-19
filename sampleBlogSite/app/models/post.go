@@ -5,7 +5,7 @@ import (
 )
 
 type Post struct {
-	PostId          int
+	PostId int
 	Body   string
 }
 
