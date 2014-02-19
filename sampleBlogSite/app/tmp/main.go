@@ -6,12 +6,12 @@ import (
 	"reflect"
 	"github.com/robfig/revel"
 	_ "github.com/mattn/go-sqlite3"
-	controllers1 "github.com/robfig/revel/modules/static/app/controllers"
+	controllers0 "github.com/robfig/revel/modules/static/app/controllers"
 	_ "github.com/robfig/revel/modules/testrunner/app"
-	controllers0 "github.com/robfig/revel/modules/testrunner/app/controllers"
-	_ "revelFramework4Go/sampleBlogSite/app"
-	controllers "revelFramework4Go/sampleBlogSite/app/controllers"
-	tests "revelFramework4Go/sampleBlogSite/tests"
+	controllers1 "github.com/robfig/revel/modules/testrunner/app/controllers"
+	_ "revelFramework4Go/sampleBlogsite/app"
+	controllers "revelFramework4Go/sampleBlogsite/app/controllers"
+	tests "revelFramework4Go/sampleBlogsite/tests"
 )
 
 var (
@@ -36,7 +36,8 @@ func main() {
 				Args: []*revel.MethodArg{ 
 				},
 				RenderArgNames: map[int][]string{ 
-					10: []string{ 
+					14: []string{ 
+						"payLoad",
 					},
 				},
 			},
@@ -46,8 +47,8 @@ func main() {
 					&revel.MethodArg{Name: "myName", Type: reflect.TypeOf((*string)(nil)) },
 				},
 				RenderArgNames: map[int][]string{ 
-					24: []string{ 
-						"myName",
+					33: []string{ 
+						"payLoad",
 					},
 				},
 			},
@@ -56,8 +57,18 @@ func main() {
 				Args: []*revel.MethodArg{ 
 				},
 				RenderArgNames: map[int][]string{ 
-					29: []string{ 
-						"myName",
+					41: []string{ 
+						"payLoad",
+					},
+				},
+			},
+			&revel.MethodType{
+				Name: "Project",
+				Args: []*revel.MethodArg{ 
+				},
+				RenderArgNames: map[int][]string{ 
+					49: []string{ 
+						"payLoad",
 					},
 				},
 			},
@@ -90,7 +101,31 @@ func main() {
 			
 		})
 	
-	revel.RegisterController((*controllers0.TestRunner)(nil),
+	revel.RegisterController((*controllers0.Static)(nil),
+		[]*revel.MethodType{
+			&revel.MethodType{
+				Name: "Serve",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "prefix", Type: reflect.TypeOf((*string)(nil)) },
+					&revel.MethodArg{Name: "filepath", Type: reflect.TypeOf((*string)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+				},
+			},
+			&revel.MethodType{
+				Name: "ServeModule",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "moduleName", Type: reflect.TypeOf((*string)(nil)) },
+					&revel.MethodArg{Name: "prefix", Type: reflect.TypeOf((*string)(nil)) },
+					&revel.MethodArg{Name: "filepath", Type: reflect.TypeOf((*string)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
+				},
+			},
+			
+		})
+	
+	revel.RegisterController((*controllers1.TestRunner)(nil),
 		[]*revel.MethodType{
 			&revel.MethodType{
 				Name: "Index",
@@ -124,43 +159,19 @@ func main() {
 			
 		})
 	
-	revel.RegisterController((*controllers1.Static)(nil),
-		[]*revel.MethodType{
-			&revel.MethodType{
-				Name: "Serve",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "prefix", Type: reflect.TypeOf((*string)(nil)) },
-					&revel.MethodArg{Name: "filepath", Type: reflect.TypeOf((*string)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-				},
-			},
-			&revel.MethodType{
-				Name: "ServeModule",
-				Args: []*revel.MethodArg{ 
-					&revel.MethodArg{Name: "moduleName", Type: reflect.TypeOf((*string)(nil)) },
-					&revel.MethodArg{Name: "prefix", Type: reflect.TypeOf((*string)(nil)) },
-					&revel.MethodArg{Name: "filepath", Type: reflect.TypeOf((*string)(nil)) },
-				},
-				RenderArgNames: map[int][]string{ 
-				},
-			},
-			
-		})
-	
 	revel.DefaultValidationKeys = map[string]map[int]string{ 
-		"revelFramework4Go/sampleBlogSite/app/controllers.App.Hello": { 
-			15: "myName",
-			16: "myName",
+		"revelFramework4Go/sampleBlogsite/app/controllers.App.Hello": { 
+			19: "myName",
+			20: "myName",
 		},
-		"revelFramework4Go/sampleBlogSite/app/models.(*Post).Validate": { 
+		"revelFramework4Go/sampleBlogsite/app/models.(*Post).Validate": { 
 			14: "post.Body",
 		},
-		"revelFramework4Go/sampleBlogSite/app/models.(*User).Validate": { 
+		"revelFramework4Go/sampleBlogsite/app/models.(*User).Validate": { 
 			28: "user.Username",
 			36: "user.Name",
 		},
-		"revelFramework4Go/sampleBlogSite/app/models.ValidatePassword": { 
+		"revelFramework4Go/sampleBlogsite/app/models.ValidatePassword": { 
 			44: "password",
 		},
 	}

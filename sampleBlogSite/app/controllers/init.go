@@ -12,5 +12,5 @@ func init() {
 //	revel.InterceptMethod(Hotels.checkUser, revel.BEFORE)
 	revel.InterceptMethod((*GorpController).Commit, revel.AFTER)
 	revel.InterceptMethod((*GorpController).Rollback, revel.FINALLY)
-	fmt.Printf("done init func in init.go file\n")
+	fmt.Printf("init() in init.go file done.\n")
 }
