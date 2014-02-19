@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/robfig/revel"
 	"revelFramework4Go/sampleBlogSite/app/models"
-
 )
 
 type Posts struct {
@@ -16,8 +15,10 @@ func (c Posts) Index() revel.Result {
 	if err != nil {
 		panic(err)
 	}
-	payLoad := results.(*models.Post).Body
-	return c.Render(payLoad)
+	body := results.(*models.Post).Body
+	title := "POSTS/INDEX"
+
+	return c.Render(title, body)
 }
 
 func (c Posts) Index2() revel.Result {
@@ -34,5 +35,7 @@ func (c Posts) Index2() revel.Result {
 
 	payLoad := p
 	fmt.Println(payLoad)
-	return c.Render(payLoad)
+	title := "POSTS/INDEX2"
+
+	return c.Render(title, payLoad)
 }

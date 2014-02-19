@@ -10,11 +10,8 @@ type App struct {
 }
 
 func (c App) Index() revel.Result {
-
-	payLoad := map[string] string {
-		"title": "HOME",
-	}
-	return c.Render(payLoad)
+	title := "HOME"
+	return c.Render(title)
 }
 
 func (c App) Hello(myName string) revel.Result {
@@ -32,30 +29,16 @@ func (c App) Hello(myName string) revel.Result {
 		panic(err)
 	}
 
-	payLoad := map[string] string {
-		"title": "HELLO",
-		"myName": myName,
-	}
-
-	return c.Render(payLoad)
+	title := "HELLO"
+	return c.Render(title, myName)
 }
 
 func (c App) List() revel.Result {
-
-
-
-	
-
-	payLoad := map[string] string {
-		"title": "LIST",
-	}
-	return c.Render(payLoad)
+	title := "LIST"
+	return c.Render(title)
 }
 
 func (c App) Project() revel.Result {
-
-	payLoad := map[string] string {
-		"title": "PROJECT",
-	}
-	return c.Render(payLoad)
+	title := "PROJECT"
+	return c.Render(title)
 }
