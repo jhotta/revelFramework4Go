@@ -36,7 +36,7 @@ func main() {
 				Args: []*revel.MethodArg{ 
 				},
 				RenderArgNames: map[int][]string{ 
-					14: []string{ 
+					17: []string{ 
 						"payLoad",
 					},
 				},
@@ -47,7 +47,7 @@ func main() {
 					&revel.MethodArg{Name: "myName", Type: reflect.TypeOf((*string)(nil)) },
 				},
 				RenderArgNames: map[int][]string{ 
-					33: []string{ 
+					40: []string{ 
 						"payLoad",
 					},
 				},
@@ -57,7 +57,7 @@ func main() {
 				Args: []*revel.MethodArg{ 
 				},
 				RenderArgNames: map[int][]string{ 
-					41: []string{ 
+					48: []string{ 
 						"payLoad",
 					},
 				},
@@ -67,7 +67,7 @@ func main() {
 				Args: []*revel.MethodArg{ 
 				},
 				RenderArgNames: map[int][]string{ 
-					49: []string{ 
+					56: []string{ 
 						"payLoad",
 					},
 				},
@@ -161,8 +161,8 @@ func main() {
 	
 	revel.DefaultValidationKeys = map[string]map[int]string{ 
 		"revelFramework4Go/sampleBlogsite/app/controllers.App.Hello": { 
-			19: "myName",
-			20: "myName",
+			21: "myName",
+			22: "myName",
 		},
 		"revelFramework4Go/sampleBlogsite/app/models.(*Post).Validate": { 
 			14: "post.Body",

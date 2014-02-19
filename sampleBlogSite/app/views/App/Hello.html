@@ -1,6 +1,5 @@
 {{template "header.html" .}}
 
-<div class="container">
 	<div class="masthead">
 	<h3 class="muted">Revel Framework Book {{.payLoad.title}}</h3>
 		<div class="navbar">
@@ -8,16 +7,25 @@
 		    <div class="container">
 		      <ul class="nav">
 		        <li class="active"><a href="#">Home</a></li>
-		        <li><a href="../App/Project">Projects</a></li>
-		        <li><a href="../App/List">List</a></li>
+			    <li><a href="../App/List">List</a></li>	      
+		        <li><a href="../App/Project">Project</a></li>
 		      </ul>
 		    </div>
 		  </div>
 		</div><!-- /.navbar -->
 	</div>
 
+    <div class="jumbotron">
+		<h1>@ {{.payLoad.title}} !</h1>
+		<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+		<a class="btn btn-large btn-success" href="#">Get started today</a>
+    </div>
+
+    <hr>
+
 	<h1>Hello {{.payLoad.myName}}</h1>
 	<a href="/">Back to form</a>
-</div>
+
+	<hr>
 
 {{template "footer.html" .}}
