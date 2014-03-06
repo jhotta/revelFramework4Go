@@ -4,3 +4,5 @@
 $ cd $GOPATH
 $ revel run revelFramework4Go/sampleBlogSite
 ```
+
+test
